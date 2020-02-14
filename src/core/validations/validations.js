@@ -23,22 +23,22 @@ export const containsSpaces = term => {
 
 /** @type Validator */
 export const containsVowel = term => {
-  return /\[aeiou]+/.test(term);
+  return /[aeiou]+/.test(term);
 }
 
 /** @type Validator */
 export const containsUppercase = term => {
-  return /\[A-Z]+/.test(term);
+  return /[A-Z]+/.test(term);
 }
 
 /** @type Validator */
 export const containsLowercase = term => {
-  return /\[a-z]+/.test(term);
+  return /[a-z]+/.test(term);
 }
 
 /** @type Validator */
 export const containsSpecialCharacters = term => {
-  return /\[!@£$%^&*()]+/.test(term);
+  return /[!@£$%^&*()]+/.test(term);
 }
 
 /** @type Validator */

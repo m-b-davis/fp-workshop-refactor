@@ -1,20 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import {useRoutes} from 'hookrouter';
+import {useRoutes, navigate} from 'hookrouter';
 import { UsersPage } from './pages/users-page';
+import { ValidationsPage } from './pages/validation-page';
+import { ApiPage } from './pages/api-page';
+
  
 const routes = {
-    '/users': () => <UsersPage />,
+    '/selectors': () => <UsersPage />,
+    '/validations': () => <ValidationsPage />,
+    '/api': () => <ApiPage />,
     '/': () => <UsersPage />,
 };
+
+function Header() {
+  return (
+    <ul className="nav justify-content-center">
+      <li className="nav-item">
+        <a className="nav-link active" onClick={() => navigate('/selectors')}>Test Selectors</a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link active" onClick={() => navigate('/validations')}>Test Validations</a>
+      </li>
+
+      <li className="nav-item">
+        <a className="nav-link active" onClick={() => navigate('/api')}>Test Api</a>
+      </li>
+    </ul>
+  );
+}
     
 function App () {
   return (
-    <div>
-
-    { useRoutes(routes) }
+    <div className="content">
+      <Header />
+     { useRoutes(routes) }
     </div>
   );
 }
@@ -41,3 +62,4 @@ function App () {
 // }
 
 export default App;
+
